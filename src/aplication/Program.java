@@ -1,5 +1,7 @@
 package aplication;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 
 public class Program {
@@ -9,6 +11,8 @@ public class Program {
 		Department dp = new Department(1, "books");
 		
 		System.out.println(dp);
+		
+		SellerDao sellerDao = DaoFactory.createSellerDao();
 	}
 
 }
