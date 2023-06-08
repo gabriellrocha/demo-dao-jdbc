@@ -1,18 +1,19 @@
 package aplication;
 
-import model.dao.DaoFactory;
+import db.DB;
 import model.dao.SellerDao;
-import model.entities.Department;
+import model.dao.impl.SellerDaoJDBC;
+import model.entities.Seller;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Department dp = new Department(1, "books");
+		SellerDao  sellerDao = new SellerDaoJDBC(DB.getConnection());
 		
-		System.out.println(dp);
+		Seller seller = sellerDao.findById(7);
 		
-		SellerDao sellerDao = DaoFactory.createSellerDao();
+		System.out.println(seller);
 	}
 
 }
