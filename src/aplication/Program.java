@@ -11,6 +11,7 @@ public class Program {
 		
 		SellerDao  sellerDao = new SellerDaoJDBC(DB.getConnection());
 		
+		System.out.println("=== Test 1: seller findById ===");
 		Seller seller = sellerDao.findById(7);
 		
 		System.out.println(seller);
