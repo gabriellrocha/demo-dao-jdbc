@@ -4,9 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import db.DB;
+import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.dao.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -16,7 +15,7 @@ public class Program {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		SellerDao  sellerDao = new SellerDaoJDBC(DB.getConnection());
+		SellerDao  sellerDao = DaoFactory.createSellerDao();
 		
 		System.out.println("=== Test 1: seller findById ===");
 		Seller seller = sellerDao.findById(7);
